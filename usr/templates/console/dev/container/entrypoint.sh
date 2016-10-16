@@ -1,13 +1,12 @@
 #!/usr/bin/env sh
 
-
 # Docker entry point script
-
 
 # get group and user details from volume
 GROUPID=$(stat -c "%g" /work)
 USERID=$(stat -c "%u" /work)
 USERNAME="dev"
+
 
 # add matching group and user
 groupadd --gid $GROUPID $USERID
@@ -16,6 +15,7 @@ useradd $USERNAME --home /home/$USERNAME --gid $GROUPID --uid $USERID --shell /u
 
 # set user password for dev (for sshfs access)
 echo "$USERNAME:password" | chpasswd
+
 
 # create the dev user's home directory
 mkdir /home/$USERNAME
@@ -26,8 +26,8 @@ chown -R $USERNAME:$GROUPID /opt/oh-my-zsh
 cp -r /root/.zshrc /home/$USERNAME/.zshrc
 
 
-# setup clojure tools
-# cp -r /root/.lein /home/$HOST_USER/.lein
+# setup clojure tools for user
+cp -r /root/.lein /home/$USERNAME/.lein
 
 
 #make sure all permissions are good to go.
@@ -39,5 +39,3 @@ chown -R $USERNAME:$GROUPID /home/$USERNAME
 
 
 su $USERNAME
-
-

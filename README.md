@@ -7,8 +7,9 @@ An experimental prototype cli for dockerized development.
 ## Setup
 
 ```bash
-# you must have docker installed
+# you must have docker and bash installed
 docker --version
+bash --version
 
 
 # clone the repository to a local directory
@@ -47,10 +48,27 @@ make docker-build
 # run your docker dev environment
 make docker-run
 
+=> you should now be in a terminal inside your docker that looks like this
+λ /work/
+
+
+# start a clojure repl
+lein repl
 
 ```
 
+
+## Editor
+
 Now you should have a fully containerized linux/java environment with tools you need ready for use.
+
+Use your editor of choice to connect via nrepl on port 9090
+
+
+
+## JDK Access
+TODO: add sshfs access to container for access to JDK for Cursive.
+
 
 
 

@@ -3,13 +3,10 @@
 # This script performs actions to initialize this template
 PROJECT_PATH=$1
 PROJECT_NAME=$2
+JAVA_PROJECT_NAME=${PROJECT_NAME//-/_}
 
 
-# TODO - JAVA'ify the project name as file name
-JAVA_PROJECT_NAME=$PROJECT_NAME
-
-
-# Sanitize namespaces
+# Sanitize namespaces ?
 # https://github.com/technomancy/leiningen/blob/master/src/leiningen/new/templates.clj#L80
 
 

@@ -2,12 +2,19 @@
 
 # echo welcome to tao!
 
-TAO_DIRECTORY="$HOME/work/taoclj/clj-cliprototype/usr"
+TAO_DIRECTORY="$HOME/.taoclj"
 WORKING_DIRECTORY=$(pwd)
 COMMAND=$1
 
 
-if [ $COMMAND = "new" ]; then
+
+if [ "$COMMAND" = "--version" ]; then
+     echo "version 0.1.0"
+
+elif [ "$COMMAND" = "--help" ]; then
+     echo "taoclj <command> <template> <name>"
+
+elif [ "$COMMAND" = "new" ]; then
     # validate
     # project name can only contain letters, numbers, dashes and underscores
 
@@ -24,21 +31,18 @@ if [ $COMMAND = "new" ]; then
     rm $INIT_SCRIPT
 
     printf "$TEMPLATE_NAME created at $NEW_PROJECT_NAME \n\n"
+else
+    echo "command not found"
+    echo "taoclj <command> <template> <name>"
 fi
 
 
 # check that task is present in usr/tasks folder
-
-
 # if task is .jar require JAVA_HOME be set to proceed beyond this point
-
-
-
 
 # elif [ $COMMAND = "repl" ]; then
 #     echo start up repl by calling into jar!
 # else
 #     echo command not found
 # fi
-
 

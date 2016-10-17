@@ -3,6 +3,6 @@
             [{{{:PROJECT_NAME:}}} :refer :all]))
 
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+
+; (deftest a-test
+;   (is (= 0 1)))

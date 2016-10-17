@@ -13,4 +13,4 @@ docker-build:
 # run the dev container
 docker-run:
 	mkdir -p ~/.m2
-	docker run --rm  -v $(current_path):/work -v ~/.m2:/home/$(USER)/.m2  -p 9090:9090  -it $(TAG)
+	docker run --rm  -v $(current_path):/work -v ~/.m2:/home/$(USER)/.m2  -p 9090:9090  -it $(TAG) zsh

@@ -4,4 +4,7 @@
   
   :dependencies [[org.clojure/clojure "1.8.0"]]
 
-  :repl-options {:host "0.0.0.0" :port 9090})
+  :repl-options {:host "0.0.0.0" :port 9090}
+  
+  ; :main 
+  )

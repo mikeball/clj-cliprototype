@@ -1,6 +1,9 @@
 (ns {{{:PROJECT_NAME:}}})
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+
+(defn say-hi [name]
+  (str "hi " name))
+
+
+(defn -main []
+  (println (say-hi )))

@@ -7,6 +7,17 @@ WORKING_DIRECTORY=$(pwd)
 COMMAND=$1
 
 
+PLATFORM='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   PLATFORM='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   PLATFORM='macos'
+elif [[ "$unamestr" == 'FreeBSD' ]]; then
+   PLATFORM='freebsd'
+fi
+
+
 
 if [ "$COMMAND" = "--version" ]; then
      echo "version 0.1.0"
@@ -27,7 +38,7 @@ elif [ "$COMMAND" = "new" ]; then
     # perform init and cleanup
     INIT_SCRIPT=$NEW_PROJECT_NAME/init.sh
     chmod +x $INIT_SCRIPT
-    bash $INIT_SCRIPT $WORKING_DIRECTORY/$NEW_PROJECT_NAME $NEW_PROJECT_NAME
+    bash $INIT_SCRIPT $WORKING_DIRECTORY/$NEW_PROJECT_NAME $NEW_PROJECT_NAME $PLATFORM
     rm $INIT_SCRIPT
 
     printf "$TEMPLATE_NAME created at $NEW_PROJECT_NAME \n\n"

@@ -1,6 +1,10 @@
 # clj-cliprototype
 An experimental prototype cli for dockerized development.
 
+This setup is primarily tested on linux which require some
+special setup of user permissions. Mac users please
+see the section below on removing the entrypoint from 
+your dockerfile because it will cause you problems.
 
 
 
@@ -56,6 +60,17 @@ make docker-run
 lein repl
 
 ```
+
+
+
+# Mac Users
+
+In the dev/container/Dockerfile comment out the entrypoint line.
+
+```bash
+# ENTRYPOINT /opt/entrypoint.sh
+```
+
 
 
 ## Editor

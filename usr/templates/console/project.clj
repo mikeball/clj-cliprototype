@@ -4,7 +4,6 @@
   
   :dependencies [[org.clojure/clojure "1.8.0"]]
 
+  :test-paths ["src"]
   :repl-options {:host "0.0.0.0" :port 9090}
-  
-  ; :main 
-  )
+  :main myconsole)

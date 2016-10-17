@@ -8,7 +8,6 @@ TAG={{{:PROJECT_NAME:}}}
 # build the container
 docker-build:
 	docker build --tag=$(TAG) dev/container
-	notify-send "$(TAG) build complete"
 
 
 # run the dev container

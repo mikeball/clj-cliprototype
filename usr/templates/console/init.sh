@@ -15,5 +15,9 @@ mv $PROJECT_PATH/src/console.clj $PROJECT_PATH/src/$JAVA_PROJECT_NAME.clj
 mv $PROJECT_PATH/src/console_tests.clj $PROJECT_PATH/src/${JAVA_PROJECT_NAME}_tests.clj
 
 # replace tokens in all files
-find $PROJECT_PATH -type f -exec sed -i "s/{{{:PROJECT_NAME:}}}/$PROJECT_NAME/g" {} +
+# find . -type f -name '*.txt' -exec sed -i '' s/this/that/ {} +
+
+find $PROJECT_PATH -type f -exec sed -i '' "s/{{{:PROJECT_NAME:}}}/$PROJECT_NAME/g" {} +
+
+# find $PROJECT_PATH -type f -exec sed -i "s/{{{:PROJECT_NAME:}}}/$PROJECT_NAME/g" {} +
 
